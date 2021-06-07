@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "492211413322",
+    "firebase_url": "https://fitness-and-nutrition-app-default-rtdb.firebaseio.com",
+    "project_id": "fitness-and-nutrition-app",
+    "storage_bucket": "fitness-and-nutrition-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492211413322:android:1c5c62a27a3b02784821b3",
+        "android_client_info": {
+          "package_name": "com.example.fitnessandnutritionapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492211413322-76jps5n3g510rfen3im0ghcp2msa31vi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fitnessandnutritionapp",
+            "certificate_hash": "66c733288cf0fab4df643cd286277b1cc2405a62"
+          }
+        },
+        {
+          "client_id": "492211413322-fi68or7ptto3qcobrkk6bk3mku7tug8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7yD8HppV8JpaPG_1ZK34yMdl1-H42G5M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492211413322-fi68or7ptto3qcobrkk6bk3mku7tug8o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
