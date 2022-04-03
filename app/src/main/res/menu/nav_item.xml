@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/ic_account"
+        app:cnb_backgroundColor="#000000"
+        app:cnb_iconColor="#ffffff"
+        app:cnb_textColor="#ffffff"
+        android:title="Account" />
+    <item
+        android:id="@+id/exercises"
+        android:icon="@drawable/ic_exercises"
+        app:cnb_backgroundColor="#000000"
+        app:cnb_iconColor="#ffffff"
+        app:cnb_textColor="#ffffff"
+        android:title="Exercises" />
+    <item
+        android:id="@+id/workouts"
+        android:icon="@drawable/ic_workouts"
+        app:cnb_backgroundColor="#000000"
+        app:cnb_iconColor="#ffffff"
+        app:cnb_textColor="#ffffff"
+        android:title="Workouts" />
+    <item
+        android:id="@+id/foods"
+        android:icon="@drawable/ic_foods"
+        app:cnb_backgroundColor="#000000"
+        app:cnb_iconColor="#ffffff"
+        app:cnb_textColor="#ffffff"
+        android:title="Nutrition" />
+    <item
+        android:id="@+id/diets"
+        android:icon="@drawable/ic_diets"
+        app:cnb_backgroundColor="#000000"
+        app:cnb_iconColor="#ffffff"
+        app:cnb_textColor="#ffffff"
+        android:title="Diet Plans" />
+</menu>

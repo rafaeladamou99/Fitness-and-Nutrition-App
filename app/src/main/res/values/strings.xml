@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Fitness and Nutrition App</string>
+
+    <string-array name="activitylevel">
+        <item>Sedentary (Little or no exercise)</item>
+        <item>Lightly active (Light exercise/sports 3-5 days a week)</item>
+        <item>Moderately active (Moderate exercise/sports 3-5 days a week)</item>
+        <item>Very active (Hard exercise/sports 6-7 days a week)</item>
+        <item>Extra active (Hard exercise/sports 6-7 days a week, plus physical job)</item>
+    </string-array>
+
+    <string-array name="goal">
+        <item>Weight Loss</item>
+        <item>Maintenance</item>
+        <item>Weight Gain</item>
+    </string-array>
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+</resources>

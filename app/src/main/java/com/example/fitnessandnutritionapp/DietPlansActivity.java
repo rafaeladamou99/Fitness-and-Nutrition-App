@@ -27,6 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DietPlansActivity extends AppCompatActivity implements FirestoreAdapterLogged.OnListItemClick {
 
@@ -66,6 +67,15 @@ public class DietPlansActivity extends AppCompatActivity implements FirestoreAda
         String UserID = fAuth.getCurrentUser().getUid();
 
         Query query = db.collection("Empty");
+        Log.d("YOUUUUUUUU", UserID);
+        Log.d("YOUUUUUUUU", UserID);
+        Log.d("YOUUUUUUUU", UserID);
+        Log.d("YOUUUUUUUU", UserID);
+        Log.d("YOUUUUUUUU", UserID);
+        Log.d("YOUUUUUUUU", UserID);
+        Log.d("YOUUUUUUUU", UserID);
+
+
 
         final PagedList.Config config = new PagedList.Config.Builder()
                 .setInitialLoadSizeHint(10)
@@ -135,7 +145,8 @@ public class DietPlansActivity extends AppCompatActivity implements FirestoreAda
                     DocumentSnapshot foodLogged = task.getResult();
                     ArrayList<String> breakfast = (ArrayList<String>) foodLogged.get("breakfast");
                     int modbreakfast = 0;
-                    for (int i = 0; i<breakfast.size(); i++){
+                    int bSize = (breakfast == null) ? 0 : breakfast.size();
+                    for (int i = 0; i<bSize; i++){
                         String[] ts = breakfast.get(i).split("TS");
                         long timeobj = Long.parseLong(ts[1])/86400000;
                         long current = System.currentTimeMillis()/86400000;
@@ -151,7 +162,8 @@ public class DietPlansActivity extends AppCompatActivity implements FirestoreAda
 
                     ArrayList<String> lunch = (ArrayList<String>) foodLogged.get("lunch");
                     int modlunch = 0;
-                    for (int i = 0; i<lunch.size(); i++){
+                    int lSize = (lunch == null) ? 0 : lunch.size();
+                    for (int i = 0; i<lSize; i++){
                         String[] ts = lunch.get(i).split("TS");
                         long timeobj = Long.parseLong(ts[1])/86400000;
                         long current = System.currentTimeMillis()/86400000;
@@ -167,7 +179,8 @@ public class DietPlansActivity extends AppCompatActivity implements FirestoreAda
 
                     ArrayList<String> dinner = (ArrayList<String>) foodLogged.get("dinner");
                     int moddinner = 0;
-                    for (int i = 0; i<dinner.size(); i++){
+                    int dSize = (dinner == null) ? 0 : dinner.size();
+                    for (int i = 0; i<dSize; i++){
                         String[] ts = dinner.get(i).split("TS");
                         long timeobj = Long.parseLong(ts[1])/86400000;
                         long current = System.currentTimeMillis()/86400000;
@@ -183,7 +196,8 @@ public class DietPlansActivity extends AppCompatActivity implements FirestoreAda
 
                     ArrayList<String> snack = (ArrayList<String>) foodLogged.get("snack");
                     int modsnack = 0;
-                    for (int i = 0; i<snack.size(); i++){
+                    int sSize = (snack == null) ? 0 : snack.size();
+                    for (int i = 0; i<sSize; i++){
                         String[] ts = snack.get(i).split("TS");
                         long timeobj = Long.parseLong(ts[1])/86400000;
                         long current = System.currentTimeMillis()/86400000;
@@ -205,25 +219,25 @@ public class DietPlansActivity extends AppCompatActivity implements FirestoreAda
                     ArrayList<String> lnames = new ArrayList<String>();
                     ArrayList<String> dnames = new ArrayList<String>();
                     ArrayList<String> snames = new ArrayList<String>();
-                    for (int i = 0; i<breakfast.size();i++){
+                    for (int i = 0; i<bSize;i++){
                         String[] tempbreakfast = breakfast.get(i).split("HOWMUCH");
                         String[] namesIds  = tempbreakfast[0].split("%");
                         bnames.add(namesIds[0]);
                         bID.add(namesIds[1]);
                     }
-                    for (int i = 0; i<lunch.size();i++){
+                    for (int i = 0; i<lSize;i++){
                         String[] templunch = lunch.get(i).split("HOWMUCH");
                         String[] namesIds  = templunch[0].split("%");
                         lnames.add(namesIds[0]);
                         lID.add(namesIds[1]);
                     }
-                    for (int i = 0; i<dinner.size();i++){
+                    for (int i = 0; i<dSize;i++){
                         String[] tempdinner = dinner.get(i).split("HOWMUCH");
                         String[] namesIds  = tempdinner[0].split("%");
                         dnames.add(namesIds[0]);
                         dID.add(namesIds[1]);
                     }
-                    for (int i = 0; i<snack.size();i++){
+                    for (int i = 0; i<sSize;i++){
                         String[] tempsnack = snack.get(i).split("HOWMUCH");
                         String[] namesIds  = tempsnack[0].split("%");
                         snames.add(namesIds[0]);
@@ -278,7 +292,7 @@ public class DietPlansActivity extends AppCompatActivity implements FirestoreAda
                     double stotal = 0;
 
                     ArrayList<String> bkcalList = new ArrayList<String>();
-                    for (int i = 0; i<breakfast.size();i++){
+                    for (int i = 0; i<bSize;i++){
                         String[] temp = breakfast.get(i).split("HOWMUCH");
                         bID.add(temp[0]);
                         bkcalList.add(temp[1]);
@@ -287,7 +301,7 @@ public class DietPlansActivity extends AppCompatActivity implements FirestoreAda
                     }
 
                     ArrayList<String> lkcalList = new ArrayList<String>();
-                    for (int i = 0; i<lunch.size();i++){
+                    for (int i = 0; i<lSize;i++){
                         String[] temp = lunch.get(i).split("HOWMUCH");
                         lID.add(temp[0]);
                         lkcalList.add(temp[1]);
@@ -296,7 +310,7 @@ public class DietPlansActivity extends AppCompatActivity implements FirestoreAda
                     }
 
                     ArrayList<String> dkcalList = new ArrayList<String>();
-                    for (int i = 0; i<dinner.size();i++){
+                    for (int i = 0; i<dSize;i++){
                         String[] temp = dinner.get(i).split("HOWMUCH");
                         dID.add(temp[0]);
                         dkcalList.add(temp[1]);
@@ -305,7 +319,7 @@ public class DietPlansActivity extends AppCompatActivity implements FirestoreAda
                     }
 
                     ArrayList<String> skcalList = new ArrayList<String>();
-                    for (int i = 0; i<snack.size();i++){
+                    for (int i = 0; i<sSize;i++){
                         String[] temp = snack.get(i).split("HOWMUCH");
                         sID.add(temp[0]);
                         skcalList.add(temp[1]);
@@ -366,7 +380,8 @@ public class DietPlansActivity extends AppCompatActivity implements FirestoreAda
 
 
                     int alltotal = (int)Math.round(btotal + ltotal + dtotal + stotal);
-                    int goal0 = Integer.parseInt(foodLogged.get("targetkcal").toString());
+                    int g0 = (foodLogged.get("targetkcal") == null) ? 0 : Integer.parseInt(foodLogged.get("targetkcal").toString());
+                    int goal0 = g0;
                     food.setText(String.valueOf(alltotal));
                     goal.setText(String.valueOf(goal0));
                     if (alltotal>goal0){
@@ -379,6 +394,7 @@ public class DietPlansActivity extends AppCompatActivity implements FirestoreAda
                         remainingcol.setTextColor(Color.parseColor("#06E106"));
                     }
                 }
+
             }
         });
 

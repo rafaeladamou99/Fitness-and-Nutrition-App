@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0">
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="0dp"
+        android:background="#fff"
+        app:elevation="2dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/nav_item"
+        tools:ignore="InvalidId,MissingConstraints"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <ImageView
+        android:id="@+id/workoutimage"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#ffffff"
+        tools:srcCompat="@tools:sample/avatars"
+        android:padding="1dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exname" />
+
+    <TextView
+        android:id="@+id/rresst"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:text="Rest"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workoutimage" />
+
+    <TextView
+        android:id="@+id/setsxreps"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:text="Sets x Reps"
+        android:background="#FFFFFF"
+        android:textColor="#000000"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/rresst"
+        app:layout_constraintTop_toBottomOf="@+id/workoutimage" />
+
+    <TextView
+        android:id="@+id/exname"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:text="Exercise Name"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/setsxreps"
+        app:layout_constraintStart_toEndOf="@+id/eximg"
+        app:layout_constraintTop_toBottomOf="@+id/workoutimage" />
+
+    <TextView
+        android:id="@+id/eximg"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="Image"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workoutimage" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
