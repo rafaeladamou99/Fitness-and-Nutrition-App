@@ -55,6 +55,7 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
 
+        //push check
 
 
         bottomBar = findViewById(R.id.bottomBar);
